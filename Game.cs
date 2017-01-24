@@ -8,36 +8,31 @@ namespace RPSgame
 {
     class Game
     {
-        string playerInput;
-        public string StartGame()
+        public string playerOneInput;
+        public string CPUInput;
+        public string playerTwoInput;
+        public int playerOneScore = 0;
+        public int playerTwoScore = 0;
+        public int CPUScore = 0;
+        public void StartGame()
         {
-            Console.WriteLine("Choose between 'rock', 'paper', 'scissors', 'lizard', or 'spock'");
-            string choice = Console.ReadLine();
-            switch (choice)
+            Console.WriteLine("Welcome to Rock, Paper, Scissors, Lizard, Spock! Would you like to play 1 player or 2 player? Enter '1 player' or '2 player'");
+            string gameMode = Console.ReadLine();
+            switch (gameMode)
             {
-                case "rock":
-                    playerInput == "rock";
-                    return playerInput;
+                case "1 player":
+                    CPU soloPlay = new CPU();
+                    soloPlay.Computer();
                     break;
 
-                case "paper":
-
-                    break;
-
-                case "scissors":
-
-                    break;
-
-                case "lizard":
-
-                    break;
-
-                case "spock":
-
+                case "2 player":
+                    TwoPlayer headToHead = new TwoPlayer();
+                    headToHead.HeadToHead();
                     break;
 
                 default:
-
+                    Console.WriteLine("Invalid entry");
+                    Console.ReadLine();
                     break;
             }
         }
